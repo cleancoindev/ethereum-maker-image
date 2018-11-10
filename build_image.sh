@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source qm.variables
+source em.variables
 source lib/common.sh
 
 function getTag() {
@@ -32,17 +32,17 @@ else
     branch=$(git branch | grep \* | cut -d ' ' -f2-)
 
 
-    getTag $quorum_version 2.0.2 quorum_version
+    getTag $ethereum_version 2.0.2 ethereum_version
 
-    getTag $branch $quorum_maker_version quorum_maker_version
+    getTag $branch $ethereum_maker_version ethereum_maker_version
 
-    tagname=$quorum_version"_"$quorum_maker_version
+    tagname=$ethereum_version"_"$ethereum_maker_version
 fi
 
 dockername=$dockerImage":"$tagname
 echo $CYAN"Building image, "$dockername"..."$COLOR_END
 
-lib/install_quorum.sh
+lib/install_ethereum.sh
 lib/build_nodemanager.sh
 lib/build_ui.sh
 

@@ -1,0 +1,3 @@
+dockerImage=syneblock/ethereum-maker
+ethereum_version=v1.8.17    # Ethereum Branch or Tag
+ethereum_maker_version=2.5 # Not the branch or Tag, rather the default tag for the image. Branch or Tag will be from currently checkout git source.

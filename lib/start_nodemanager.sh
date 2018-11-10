@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # $1 is rpcPort and $2 is golistenPort and $3 is IP Address
-cd /root/quorum-maker/
+cd /root/ethereum-maker/
 
 if [ -z "$3" ]; then
 	socket="http://localhost:$1"
